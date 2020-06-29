@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@11ty/eleventy-navigation": "^0.1.5",
+    "fs": "^0.0.1-security",
+    "markdown-it": "^11.0.0",
+    "markdown-it-anchor": "^5.3.0"
+  }
+}
