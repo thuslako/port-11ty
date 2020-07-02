@@ -5,7 +5,10 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
 module.exports = (eleventyConfig)=>{
-
+    eleventyConfig.setLiquidOptions({
+        dynamicPartials: true,
+        strict_filters: true
+    });
     eleventyConfig.addPlugin(pluginNavigation);
     eleventyConfig.setTemplateFormats([
         "md",
@@ -43,10 +46,10 @@ module.exports = (eleventyConfig)=>{
         ui: false,
         ghostMode: false
     });
-    const liveAlbums = album => album.date <= now && !album.data.draft;
-    eleventyConfig.addCollection('posts', collection => {
+
+    eleventyConfig.addCollection('albums', collection => {
         return [
-          ...collection.getFilteredByGlob('./albums/*.md').filter(liveAlbums)
+          ...collection.getFilteredByGlob('./albums/**/*.md')
         ].reverse();
     });
 

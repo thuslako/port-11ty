@@ -1,28 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <title>Lukundu Lako</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans&display=swap" rel="stylesheet"> 
+    <style>
+    {% include 'css/style.css' %}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans&display=swap" rel="stylesheet" /> 
 </head>
 <body>
-<nav>
-    <span class="logo"> Lukundu</span>
-    <ul>
-        <a href="/albums"><li>Albums</li></a>
-        <a href="/"><li>CV</li></a>
-    </ul>
-</nav>
+<header>
+    <span class="logo"><a href="/"> Lukundu</a></span>
+</header>
  <main class="container">
     {% if title %}<h1>{{title}}</h1>{% endif %}
     {{content}}
   </main>
   <footer>
+    <div class="nav_">
+      <button class="nav-toggle">
+        <span class="nav-icon"></span>
+      </button>
+      <nav class="footer_nav">
+      <ul>
+        {% comment %} <li>
+        <span>Albums</span>
+        <ul>
+        {% for album in collections.albums %}
+          <li><a href="{{ album.url | url}}">
+            {{album.data.title}}
+          </a></li>
+        {% endfor %}
+        </ul>
+        
+        </li> {% endcomment %}
+        <li><a  name="cv" class="link" rel="noopener" target="_blank" href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing" download="">CV</a></li>
+      </ul>
+      </nav>
+    </div>
     <div>
         <span>&copy; Lukundu Lako</span>
     </div>
   </footer>
+  <script>{% include 'js/index.js' %}</script>
 </body>
 </html>

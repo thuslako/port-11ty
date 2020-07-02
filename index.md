@@ -8,6 +8,6 @@ eleventyNavigation:
 <p>
     I build things and take pictures. I'm a <strong>Full-stack developer</strong> and <strong>photographer</strong>, based out of Ottawa, Onatrio. 
 </p>
-<span> Let's chat! <a href="mailto:lukundu.lako@gmail.com"></h2>send a Email</h2></a>at lukundu.lako@gmail.com</span> 
+<span> Let's chat! <a href="mailto:lukundu.lako@gmail.com" class="link"> </h2>send me an Email</h2></a> at    lukundu.lako@gmail.com</span> 
 </div>
 
