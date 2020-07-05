@@ -10,4 +10,8 @@ eleventyNavigation:
 </p>
 <span> Let's chat! <a href="mailto:lukundu.lako@gmail.com" class="link"> </h2>send me an Email</h2></a> at    lukundu.lako@gmail.com</span> 
 </div>
-
+<div class="social-links">
+  <a href="https://www.instagram.com/lukundu/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+  <a href="https://ca.linkedin.com/in/lukundu-lako-14882762" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+  <a href="https://github.com/thuslako" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+</div>

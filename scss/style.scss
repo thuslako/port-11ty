@@ -1,6 +1,7 @@
 @import 'album.scss';
 @import 'nav.scss';
 @import 'header.scss';
+@import 'social.scss';
 
 $primary: #079992;
 $secondary: #20bf6b;
@@ -22,7 +23,6 @@ body{
 .container {
     max-width: 940px;
     width: 100%;
-    min-height: 100vh ;
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -68,6 +68,8 @@ a {
 .intro {
     margin-top: 1rem;
     max-width: 620px;
+    padding-bottom: 2rem;
+    border-bottom: #efefef solid 1px;
 }
 
 footer {

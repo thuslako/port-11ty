@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Lukundu Lako</title>
+    <title>Lukundu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <style>
@@ -11,17 +11,15 @@
 </head>
 <body>
 <header>
-    <span class="logo"><a href="/"> Lukundu</a></span>
+    <span class="logo"><a href="/">&copy; Lukundu</a></span>
 </header>
  <main class="container">
     {% if title %}<h1>{{title}}</h1>{% endif %}
     {{content}}
   </main>
-  <footer>
+  <footer>    
     <div class="nav_">
-      <button class="nav-toggle">
-        <span class="nav-icon"></span>
-      </button>
+      <span class="nav-toggle" class="nav-icon"></span>
       <nav class="footer_nav">
       <ul>
         {% comment %} <li>
@@ -39,10 +37,9 @@
       </ul>
       </nav>
     </div>
-    <div>
-        <span>&copy; Lukundu Lako</span>
-    </div>
+
   </footer>
   <script>{% include 'js/index.js' %}</script>
+  <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 </body>
 </html>
