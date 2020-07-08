@@ -3,34 +3,45 @@
 @import 'header.scss';
 @import 'social.scss';
 
-$primary: #079992;
-$secondary: #20bf6b;
+$primary: #2C3A47;
+$secondary: #218c74;
 $tertiary: #485460; 
 
 
 *{
     box-sizing: border-box;
 }
+
 body{
     padding: 0;
     margin: 0;
-    background: #ffffff;
+    background: #efefef;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 200;
     font-size: 14pt;
+    min-height: 100vh;
+    min-height:  -webkit-fill-available;   
+}
+
+.opened-drawer {
+    overflow: hidden;
 }
 
 .container {
     max-width: 940px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 h1, 
 h2, 
 h3 {
     font-family:'Anton', sans-serif; 
+}
+
+strong {
+    font-weight: 800;
 }
 
 a {
@@ -69,9 +80,5 @@ a {
     margin-top: 1rem;
     max-width: 620px;
     padding-bottom: 2rem;
-    border-bottom: #efefef solid 1px;
-}
-
-footer {
-    padding: 0 2rem;
+    border-bottom: #9aa2aa solid 1px;
 }

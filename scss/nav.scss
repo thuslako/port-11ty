@@ -2,97 +2,151 @@ nav {
     display: flex;
     width: 100%;
     flex-direction: row;
-    padding: 2rem;
 
-    .logo{
-        display: flex;
-        align-items: center;
-        width: 70%;
-    }
     ul{
-        width: 30%;
+        width: 100%;
         list-style: none;
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 5rem;
+        text-align: left;    
     }
     li{
+        width: 100%;
         display: inline-block;
-        &:hover ul {
-            display: flex;
-        }
-
+        margin: 2rem 0;
+        font-size: 42pt;
+        color: #ffff;
+        
         ul{
-            position: absolute;
-            width: auto;
-            display: none;
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 0px;
             border-left: 0.2rem solid #57606f;
-            padding: 1rem;
             flex-direction: column;
             -webkit-transition: all 0.2s;
-            transition: all 0.2s;
+            opacity: 0;
+            padding-left: 1rem;
+            -webkit-transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
+            transition: all 0.2s cubic-bezier(0.47, 0, 0.745, 0.715);
 
             li{
-                display: inline;
+                display: none;
                 padding: 0.5rem 0;
             }
         }
     }
+
+    .toggle-submenu {
+        ul{
+            opacity: 1;
+            height: 100%;
+
+            li{
+                display: inline-block;
+            }
+        }
+      
+    }
+
 }
 
 footer{
-    display: flex;
-    flex-direction: row;
+    position: fixed;
+    bottom: 10px;
+    z-index: 100;
     width: 100% ;
+    height: 2rem;
+}
+.nav-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100% ;
+    height: 2rem;
 }
 
 .nav_{
     position: relative;
     align-self: flex-end;
     transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: auto;
+    height: 100%;
+    z-index: 50;
 }
 
 .nav-toggle {
     position: relative;
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: 1.4rem;
+    height: 0.1rem;
+    background: #000;
 
-    .nav-icon {
-        &::before{
-            content: " ";
-            position: absolute;
-            display: inline-block;
-            width: 1rem;
-            height: 0.3rem;
-            background: #000;
-            bottom: 5px;
-        }
-        &::after{
-            content: " ";
-            position: absolute;
-            display: inline-block;
-            width: 1rem;
-            height: 0.3rem;
-            background: #000;
-            bottom: -5px;
-        }
+    &::after,
+    &::before{
+       transition: all 0.4s cubic-bezier(1, 0, 0, 1);
     }
-    
+    &::before{
+        content: " ";
+        position: absolute;
+        display: inline-block;
+        width: 1.4rem;
+        height: 0.1rem;
+        background: #000;
+        bottom: 8px;
+    }
+    &::after{
+        content: " ";
+        position: absolute;
+        display: inline-block;
+        width: 1.4rem;
+        height: 0.1rem;
+        background: #000;
+        bottom: -8px;
+    }
+}
 
+ .close-nav {
+    background: transparent;
+
+    &::after,
+    &::before{
+        transform-origin: left;
+    }
+    &::before{
+        -webkit-transform: rotateZ(45deg);
+        transform: rotateZ(45deg);
+    }
+    &::after{
+        -webkit-transform: rotateZ(-45deg);
+        transform: rotateZ(-45deg);
+    }
 }
 
 .footer_nav{
-    display: none;
-    position: absolute;
-    transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: block;
+    position: fixed;    
+    width: 100vw;
+    height: 100vh;
+    -webkit-transition: transform  0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: transform  0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-transform: translateY(100vh);
+    transform: translateY(100vh);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+        
 
 .footer_nav.open-nav{
-    display: flex;
-    background: #57606f;
-    width: 100vw;
-    height: 100%;
-    background: tomato;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    top: 0;
+    left: 0;
+    background:#60a3bc;
+    z-index: 10;
 }
 
 @media only screen and (max-width: 748pc){

@@ -4,6 +4,7 @@
     <title>Lukundu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Portfolio showcase for projects and photography and mini shop for limited prints">
     <style>
     {% include 'css/style.css' %}
     </style>
@@ -17,26 +18,25 @@
     {% if title %}<h1>{{title}}</h1>{% endif %}
     {{content}}
   </main>
-  <footer>    
-    <div class="nav_">
-      <span class="nav-toggle" class="nav-icon"></span>
+  <footer>
+    <div class="nav-wrapper">
+      <div class="nav_">
+        <span class="nav-toggle" class="nav-icon"></span>
+       
+      </div> 
       <nav class="footer_nav">
-      <ul>
-        {% comment %} <li>
-        <span>Albums</span>
-        <ul>
-        {% for album in collections.albums %}
-          <li><a href="{{ album.url | url}}">
-            {{album.data.title}}
-          </a></li>
-        {% endfor %}
-        </ul>
-        
-        </li> {% endcomment %}
-        <li><a  name="cv" class="link" rel="noopener" target="_blank" href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing" download="">CV</a></li>
-      </ul>
-      </nav>
-    </div>
+          <ul>
+            <li>
+            <a  class="link"  href="/">Home</a>
+            </li>
+            <li>
+            <a  name="cv" class="link" rel="noopener" target="_blank" href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing" download="">CV</a>
+            
+            </li>
+          </ul>
+        </nav>
+    </div>    
+    
 
   </footer>
   <script>{% include 'js/index.js' %}</script>
