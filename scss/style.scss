@@ -28,6 +28,7 @@ body{
 }
 
 .container {
+    display: block;
     max-width: 940px;
     width: 100%;
     margin: 0 auto;
@@ -50,6 +51,15 @@ a {
     color:$primary;
     z-index: 10;
     font-weight: bold;
+}
+.my_head{
+    display: inline-block;
+    width: 40%;
+    img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 }
 
 .link::before {
@@ -76,9 +86,30 @@ a {
     background-size: 100% 100%;
 }
 
+.intro_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
 .intro {
-    margin-top: 1rem;
-    max-width: 620px;
+    display: inline-block;
+    width: 40%;
     padding-bottom: 2rem;
     border-bottom: #9aa2aa solid 1px;
+    margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 768px ){
+    .container{
+        flex-direction: column;
+    }
+
+    .my_head,
+    .intro {
+        width: 100%;
+        border: none;
+    }
 }

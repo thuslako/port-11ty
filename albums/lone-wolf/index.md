@@ -4,7 +4,7 @@ tag: photography
 layout: layouts/default.liquid  
 ---
 
-This is album is shoot done with Fredy. Taking adventage of golden hour. 
+The young wolf Fredy. 
 
 <div class="album_">
     <ul>

@@ -21,7 +21,12 @@
   <footer>
     <div class="nav-wrapper">
       <div class="nav_">
-        <span class="nav-toggle" class="nav-icon"></span>
+        <span class="nav-toggle" class="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
        
       </div> 
       <nav class="footer_nav">
@@ -29,9 +34,18 @@
             <li>
             <a  class="link"  href="/">Home</a>
             </li>
+            <li class="has_submenu">
+              Albums
+              <ul class="submenu_" aria-expanded="false">
+              {% for album in collections.albums %}
+                <li><a href="{{ album.url | url}}" class="link">
+                  {{album.data.title}}
+                </a></li>
+              {% endfor %}
+              </ul>
+            </li>
             <li>
-            <a  name="cv" class="link" rel="noopener" target="_blank" href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing" download="">CV</a>
-            
+              <a name="cv" class="link" rel="noopener" target="_blank" href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing" download="">CV</a>
             </li>
           </ul>
         </nav>
