@@ -7,7 +7,8 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 module.exports = (eleventyConfig)=>{
     eleventyConfig.setLiquidOptions({
         dynamicPartials: true,
-        strict_filters: true
+        strict_filters: true,
+        root: ["_includes"]
     });
     eleventyConfig.addPlugin(pluginNavigation);
     eleventyConfig.setTemplateFormats([

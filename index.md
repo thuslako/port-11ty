@@ -6,7 +6,7 @@ eleventyNavigation:
 ---
 <div class="intro_wrapper">
 <div class="my_head">
-  <img src="img/DSCF2423.jpg" alt="my face" />
+  <img src="images/DSCF2423.jpg" alt="my face" />
 </div>
 <div class="intro">
   <p>
