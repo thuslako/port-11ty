@@ -7,53 +7,49 @@ const lazyImagesPlugin = require('eleventy-plugin-lazyimages');
 
 module.exports = (eleventyConfig)=>{
     eleventyConfig.addPlugin(pluginNavigation);
-    eleventyConfig.setDataDeepMerge(true);
-    eleventyConfig.setTemplateFormats([
-        "njk",
-        "md",
-        "css",
-        "jpg",
-        "png",
-        "gif"
-    ]);
-    
+    eleventyConfig.addPlugin(lazyImagesPlugin);
+    eleventyConfig.addPassthroughCopy("albums");
     eleventyConfig.addPassthroughCopy("img");
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("js");
 
-     /* Markdown Overrides */
-    let markdownLibrary = markdownIt({
+    /* Markdown Overrides */
+    let markdownIt = require("markdown-it");
+    let markdownItAnchor = require("markdown-it-anchor");
+
+    let options = {
         html: true,
         breaks: true,
         linkify: true
-    }).use(markdownItAnchor, {
+    };
+
+    let opts = {
         permalink: true,
         permalinkClass: "direct-link",
         permalinkSymbol: "#"
-    });
-    eleventyConfig.setLibrary("md", markdownLibrary);
+    };
+
+    eleventyConfig.setLibrary("md", markdownIt(options)
+        .use(markdownItAnchor, opts)
+    );
 
     // Browsersync Overrides
     eleventyConfig.setBrowserSyncConfig({
         callbacks: {
-            ready: function(err, browserSync) {
-                const content_404 = fs.readFileSync('_site/404.html');
-
-                browserSync.addMiddleware("*", (req, res) => {
-                // Provides the 404 content without redirect.
-                res.write(content_404);
-                res.end();
-                });
-            },
-        },
-        ui: false,
-        ghostMode: false
+          ready: function(err, browserSync) {
+            const content_404 = fs.readFileSync('_site/404.html');
+    
+            browserSync.addMiddleware("*", (req, res) => {
+              // Provides the 404 content without redirect.
+              res.write(content_404);
+              res.end();
+            });
+          }
+        }
     });
-
-    eleventyConfig.addPlugin(lazyImagesPlugin);
     eleventyConfig.addCollection('albums', collection => {
         return [
-          ...collection.getFilteredByGlob('./albums/**/*.njk')
+          ...collection.getFilteredByGlob('./albums/**/*.md')
         ].reverse();
     });
 
@@ -64,11 +60,13 @@ module.exports = (eleventyConfig)=>{
             "html",
             "liquid"
         ],
+        pathPrefix: "/",
+
         markdownTemplateEngine: "liquid",
         htmlTemplateEngine: "njk",
         dataTemplateEngine: "njk",
-
-        // These are all optional, defaults are shown:
+        passthroughFileCopy: true,
+        
         dir: {
             input: ".",
             includes: "_includes",
