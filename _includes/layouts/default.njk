@@ -6,13 +6,13 @@
     <title>Lukundu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio showcase for projects and photography and mini shop for limited prints">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans&display=swap" rel="stylesheet" /> 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Noto+Sans&display=swap" rel="stylesheet" /> 
 </head>
-<body>
+<body {% if templateClass %} class="{{templateClass}}" {% endif %}>
 <header>
     <span class="logo"><a href="/">&copy; Lukundu</a></span>
 </header>
- <main class="container">
+ <main class="container"  >
 
     {% if title %}<h1>{{title}}</h1>{% endif %}
     {{ content | safe }}
@@ -33,8 +33,8 @@
             <li>
             <a  class="link"  href="/">Home</a>
             </li>
-            <li class="has_submenu">
-              Albums
+            <li>
+              <span class="link has_submenu" >Albums</span>
               <ul class="submenu_" aria-expanded="false">
               {%- for album in collections.albums %}
                 <li><a href="{{ album.url | url}}" class="link">{{album.data.title}}</a></li>

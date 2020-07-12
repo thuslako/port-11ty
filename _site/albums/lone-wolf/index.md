@@ -1,7 +1,8 @@
 ---
 title: Lone wolf
 tags: photography
-layout: layouts/default.njk  
+layout: layouts/default.njk
+templateClass: album_post_lw  
 ---
 
 The young wolf Fredy. 

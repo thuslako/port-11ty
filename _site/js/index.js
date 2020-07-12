@@ -8,10 +8,9 @@
 
   document.querySelectorAll('.has_submenu').forEach( menu => {
     menu.addEventListener('click', event => {
-      toggleClass(event.target, 'toggle-submenu');
-        const condAria = event.target.querySelector('.submenu_').getAttribute('aria-expanded');
-        condAria == 'false'? event.target.querySelector('.submenu_').setAttribute('aria-expanded', true) : event.target.querySelector('.submenu_').setAttribute('aria-expanded', false);
+        toggleClass(event.target.nextElementSibling, 'toggle-submenu');
+        const condAria = event.target.nextElementSibling.getAttribute('aria-expanded');
+        condAria == 'false'? event.target.nextElementSibling.setAttribute('aria-expanded', true) : event.target.querySelector('.submenu_').setAttribute('aria-expanded', false);
     });
-  });
-  
+  });  
 })()

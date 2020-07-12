@@ -1,10 +1,70 @@
+.album_post_as{
+    main{
+        &::before{
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0;
+            height: 0;
+            top: 5rem;
+            margin-left: -1.5rem;
+            border-top: 30rem solid #eab543;
+            border-bottom: 30rem solid transparent;
+            border-right: 22rem solid transparent;
+            z-index: -1;
+        } 
+    }
+
+    .nav-toggle{
+        &>span:nth-child(3)::after,
+        &>span:nth-child(4)::after {
+            background: #eab543;
+        }
+    }
+
+}
+
+.album_post_lw{        
+    
+    main{
+        color: whitesmoke;
+        &::before{
+            content: "";
+            position: absolute;
+            display: block;    
+
+            width: 0;
+            height: 0;
+            top: 5rem;
+            margin-left: -1.5rem;
+            border-top: 30rem solid #b33939;
+            border-bottom: 30rem solid transparent;
+            border-right: 20rem solid transparent;
+            z-index: -1;
+        } 
+    }
+
+    .nav-toggle{
+        &>span:nth-child(3)::after,
+        &>span:nth-child(4)::after {
+            background: #b33939;
+        }
+    }
+}
+
 .album_{
     width: 100%;
     ul {
         display: flex;
+        flex-direction: column;
         padding: 0;
         list-style: none;
-    }img{
+        
+        li{
+            margin: 1rem 0;
+        }
+    }
+    img{
         width: 100%;
         height: auto;
     }
