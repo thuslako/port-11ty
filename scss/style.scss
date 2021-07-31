@@ -1,12 +1,7 @@
-@import 'album.scss';
-@import 'nav.scss';
 @import 'header.scss';
 @import 'social.scss';
-
-$primary: #27ae60;
-$secondary: #b8e994;
-$tertiary: #485460; 
-
+@import 'default.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
 
 *{
     box-sizing: border-box;
@@ -38,11 +33,11 @@ body{
 h1, 
 h2, 
 h3 {
-    font-family:'Ubuntu Condensed', sans-serif; 
+    font-family:Roboto, sans-serif; 
 }
 
 strong {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 a {
@@ -53,13 +48,27 @@ a {
     font-weight: bold;
 }
 .my_head{
-    display: inline-block;
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
     width: 40%;
     img{
-        display: block;
         width: 100%;
         height: auto;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        object-fit: cover;
+
+        @media screen and (max-width:765px){
+            &{
+                width: 10rem;
+                height: 10rem;
+            }
+        }
     }
+
+
 }
 
 .link::before {
@@ -97,7 +106,6 @@ a {
     display: inline-block;
     width: 50%;
     padding-bottom:2rem;
-    border-bottom: #9aa2aa solid 1px;
     margin-top: 1rem;
 }
 
@@ -110,6 +118,5 @@ a {
     .my_head,
     .intro {
         width: 100%;
-        border: none;
     }
 }
