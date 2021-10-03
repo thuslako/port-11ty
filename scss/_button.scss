@@ -11,3 +11,61 @@
   filter: drop-shadow(0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.07));
   
 }
+
+.inline-copy {
+  margin-top: 0.6rem;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: $tertiary;
+  color: $secondary;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+
+  .confirmation {
+    position: absolute;
+    visibility: hidden;
+    background-color: $secondary;
+    color: $tertiary;
+    top: 0.1rem;
+    right: -5rem;
+    padding: 0.4rem;
+  }
+
+  .show {
+    translate: translate all ease-in-out;
+    visibility: visible;
+    -webkit-animation: popup 0.5s;
+    animation: popup 0.5s;
+  }
+
+
+  ion-icon {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+  }
+
+  @-webkit-keyframes popup {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+  }
+  
+  @keyframes popup {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+  }
+
+}
