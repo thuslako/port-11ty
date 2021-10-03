@@ -1,26 +1,33 @@
----
-templateClass: body
----
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link  href="{{ '/css/style.css' | url }}" rel="stylesheet"/>    
+    <link  href="/css/style.css" rel="stylesheet"/>    
     <title>Lukundu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio showcase for projects and photography and mini shop for limited prints">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Noto+Sans&display=swap" rel="stylesheet" /> 
 </head>
-<body {% if templateClass %} class="{{templateClass}}" {% endif %}>
+<body  class="body-dark" >
 <nav>
     <span class="logo"><a href="/">&copy; Lukundu</a></span>
 </nav>
  <main class="container"  >
+    
+    
+<header>
+  <h1>My Photographery collection</h1>
+  <p>
+    Photographery is my way sharing with with people and the world. You'll find a collections of my favourite images from a stupid amount images captured over the years.
+  </p>
+  <strong>Enjoy 😁🤙🏾</strong>
+</header>
+<div class="collection">
+  <h2>Coming soon</h2>
+</div>
 
-    {% if title %}<h1>{{title}}</h1>{% endif %}
-    {{ content | safe }}
   </main>
-  <script src="{{ '/js/index.js' | url }}" type="text/javascript"></script>
+  <script src="/js/index.js" type="text/javascript"></script>
   <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js" type="text/javascript"></script>
 </body>
 </html>

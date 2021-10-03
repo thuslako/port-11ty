@@ -1,4 +1,3 @@
-@import 'default.scss';
 .social-links{
     width: 150px;
     height: 20px;
@@ -26,6 +25,13 @@
     margin-top: 0.1rem;
     &:hover{
         background-color: $tertiary;
+    }
+}
+
+#cv{
+    color: #fefefe;
+    &:hover{
+        color: $tertiary;
     }
 }
 
