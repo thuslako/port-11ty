@@ -12,6 +12,33 @@
   
 }
 
+.btn-cv{
+  position: relative;
+  width: 6rem;
+  background-color: $primary;
+  padding-left: 1.5rem;
+  padding-right: 0.6rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  border-radius: 0.3rem;
+  color: #fefefe !important;
+  font-weight: 600;
+  font-size: 1rem;
+  filter: drop-shadow(0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.07));
+
+  ion-icon{
+    position: absolute;
+    top: 0.8rem;
+    margin-left: 0.3rem;
+  }
+
+  &:hover{
+    background-color: $tertiary;
+    color: $secondary!important;
+  }
+  
+}
+
 .inline-copy {
   margin-top: 0.6rem;
   position: relative;

@@ -8,7 +8,7 @@
     font-size: 2rem;
     margin-top: 2rem;
 
-    a{
+    .link{
         display: inline-block;
         column-span: none;
         height: 32px;
@@ -16,25 +16,6 @@
     }
 }
 
-.link-cv {
-    background: $primary;
-    color: white;
-    font-size: 0.8rem;
-    text-align: center;
-    border-radius: 2rem;
-    padding-top: 18%;
-    margin-top: 0.1rem;
-    &:hover{
-        background-color: $tertiary;
-    }
-}
-
-#cv{
-    color: #fefefe;
-    &:hover{
-        color: $tertiary;
-    }
-}
 
 @media screen and (max-width: 768px ){
     .social-links{
