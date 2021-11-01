@@ -5,6 +5,8 @@
 @import 'button';
 @import 'error';
 @import 'social';
+@import 'light';
+@import 'dark';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap');
 
 *{
@@ -22,14 +24,6 @@ body{
     -moz-osx-font-smoothing: grayscale;
 }
 
-.body {
-    background: #f5f6fa;
-}
-
-.body-dark {
-    background: $dark;
-    color: $secondary;
-}
 
 .opened-drawer {
     overflow: hidden;
@@ -60,17 +54,6 @@ a {
     font-weight: bold;
 }
 
-.body-dark {
-    & * a {
-        color: #dfe4ea;
-    }
-}
-
-.body{
-    & * a {
-        color: $primary;
-    }
-}
 .my_head{
     display: inline-flex;
     position: relative;

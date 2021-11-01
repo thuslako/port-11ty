@@ -1,8 +1,8 @@
 nav {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-content: center;
+    justify-content: space-between;
     max-width: 100%;
     padding: 1rem 1.5rem;
     height: 5rem;

@@ -1,0 +1,16 @@
+[data-theme="light"] {
+  background: $chalk;
+  color: $dark;
+
+  & * a {
+    color: $primary;
+  }
+  #btn-theme-toggle{
+    background-color: $tertiary;
+    color: #fefefe;
+  }
+  .btn-primary{
+    background-color: $dark;
+    color: $tertiary;
+  }
+}

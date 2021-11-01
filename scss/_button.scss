@@ -1,15 +1,22 @@
-.btn-primary{
-  width: clamp(100%, 10rem, 12rem);
-  background-color: $secondary;
+
+#btn-theme-toggle{
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}
+
+.btn {
+  border: transparent;
   padding-left: 0.4rem;
   padding-right: 0.4rem;
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
   border-radius: 0.3rem;
-  color: $tertiary;
   font-weight: 600;
+  width: clamp(100%, 2rem, 5rem);
+}
+.btn-primary{
   filter: drop-shadow(0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.07));
-  
 }
 
 .btn-cv{
