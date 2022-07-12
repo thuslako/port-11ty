@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@11ty/eleventy": "1.0.0-canary.41",
     "@11ty/eleventy-navigation": "^0.1.5",
     "fs": "^0.0.1-security",
     "jpeg-js": "^0.4.0",
@@ -18,6 +19,7 @@
     "build": "npm-run-all build:*"
   },
   "devDependencies": {
+    "@netlify/functions": "^0.8.0",
     "eleventy-plugin-lazyimages": "^1.1.2"
   }
 }

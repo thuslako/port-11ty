@@ -1,4 +1,5 @@
 
+const { EleventyServerlessBundlerPlugin } = require("@11ty/eleventy");
 const fs = require("fs");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -12,10 +13,6 @@ module.exports = (eleventyConfig)=>{
     eleventyConfig.addPassthroughCopy("img");
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("js");
-
-    /* Markdown Overrides */
-    let markdownIt = require("markdown-it");
-    let markdownItAnchor = require("markdown-it-anchor");
 
     let options = {
         html: true,
@@ -51,6 +48,15 @@ module.exports = (eleventyConfig)=>{
         return [
           ...collection.getFilteredByGlob('./albums/**/*.md')
         ].reverse();
+    });
+
+    eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+        name: "strip",
+        functionsDir: "./netlify/functions/",
+    });
+    eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
+        name: "catalog",
+        functionsDir: "./netlify/functions/",
     });
 
     return {
