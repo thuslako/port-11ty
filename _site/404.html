@@ -16,7 +16,7 @@
     
     <div id="error-msg">
   <span class="circle"> 
-  <img src="https://media0.giphy.com/media/BQB9Jwn1eZgli/giphy.gif?cid=ecf05e47532ee526b4ee5a190e9e0bd46931e954b57418d9&amp;rid=giphy.gif" alt="i said good day" loading="lazy" data-src="https://media0.giphy.com/media/BQB9Jwn1eZgli/giphy.gif?cid=ecf05e47532ee526b4ee5a190e9e0bd46931e954b57418d9&amp;rid=giphy.gif" class="lazyload">
+  <img src="data:image/png;base64,R0lGODlhGQAPAIcAAAAAAAoIAQ8OAhIRCwUEAAQEAAYHAAEBAAEBAAMDABQPAgUFAwICAAYFBAkJBAcFAAwLBQ0NCA4NBxEQCBkSAyAfEx4eFQYFAQcGAQoKARETDQcHAQwNBg4PCg0MAw0JARQRBRscDw4MAR0WBhAQBxURAx0aDhMUCBYYDBkYCxMQAysxKCUhFBIOBBMOARUWCiQiFRYXCScgDxcRAhEUCTEoFTI7MhkUCRMQBg0TCSgjEg8UCz9JRBcXEBwaEBcSBUtXUjdAOjctGj1FPystIhIWEhoaGScpJywtLCoqKBcYFn12b3pxZzs0KxMUEwUGAgwJAhERBA4OBB8cDRELAAkFABkbFBYWCRUSChQVDCUpHxoeFg4PAw0LARwfGBwfEhYSBxwbDh4YCRETCiAaDB8hFRsfERAMACovJR4kGSMdDRgWCSgwJiMcCyQhFzQ9NREOAhcXDCEjFyYvJB4dEg0RCCEmGSglGiUfEC83LCYjFBcZDSktIjhCOiMfFC0lEy00LCojFCojEyMkGTlDOy8pGzE5MisqHi0yKT5IQCgpHR8fF0ZSS0BLRTM6MzlCQCcmHDU9OiswLSAkIh0YCCQdEhYZDjMqGQwUDSYnICMnJi4yLBsVBVBbVU1ZVElPSgoRC0E1IVBPSjkvICwuKjg4MCQpJV5gWEhJSSYhEkpKQV9eWCUiGmdmYVNUUS0sIWZsZSAiIUNKRCMjIDg8OC8sIldWT09TT2hoZEE/OC8xKDw6L2psZ2ZmXxwZFEFEQisrJTk2LjAqJRIVDx0cGkE1JFRQRSYiIUA2KSosKTEoHhgaFyUkJjM0MzIrKT0+Ph0eGycoJkE9NS0vLlFNQygqJw8TDyIeIiIfGysmKmpiVygjIh4eITAqKRwaGiYiJmxlWxcWHCUgIT82Lx4gHRgWFVhOQTw9QUxFPVNSVXJoXm1oZyAeGnx0am9sbiwmIiIdG1paYkhKUjYwKEFCRFtUSkg/MxsZH2ReWTU2Ny0qJjc4OENFRUdEQmdcTwAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQECgAAACwAAAAAGQAPAAAI/wATMEjwZIMBgQU2ZIhyxcQUMRSoVEEAoCIABA0yOoAgIUIEDh64nAgDQ4+aEQo+EKBYEeOCBg44ZLHiZQuKGDFCVGCBp80IEFASUETA4AKBAg6khNCygk0aMyji9PAT6I8MMiA2MECQoAABBgw2ePiC5o2NOXb2TBhQ6ZKQGjLWeMDwAEMADEcDCCizglCfPHws9PClrFgoIYJSTJAggeOGCxi6CJADiEciG4gyzTrmbByyUTpi0BgwoIOGDAECnIEzyBCjRo42kULC7Fu2bsJYWaIxprQGASI+uFChKAgQHpKOJJvGLdy9a+KIFdlRh8QELCqAl/hBZIinR5piRahLZqQcvHfbvBXBlIMEmBsl4lPgPgRIpElGoJFzwm6evSbYWANKDiekYIICM1DAyRq6yNJJEKYso4QSTuiDjj/mNGHBMDS8QIcbLcxASSq1qHIKLJ/QUk0SRyDRDz5MqFOPNMAs4kMFd7Sggg+v5GJLL7zc8ksz++RzTjrrLMGENtQEA0kFehSCAw4WlCLKKq3g4goqz/BDjzzxuLNEO+AYs8shMOhQQ0AAOw==" alt="i said good day" data-src="https://media0.giphy.com/media/BQB9Jwn1eZgli/giphy.gif?cid=ecf05e47532ee526b4ee5a190e9e0bd46931e954b57418d9&amp;rid=giphy.gif" class="lazyload" width="400" height="240">
   </span>
   <h1 id="msg">uh, nothing to see here. Good day.</h1>
   <a href="/" class="btn-primary">Home</a>
@@ -28,32 +28,33 @@
 
 <script>
             (function (selector, src, preferNativeLazyLoad) {
-  if (preferNativeLazyLoad && 'loading' in HTMLImageElement.prototype) {
-    var images = document.querySelectorAll(selector);
-    var numImages = images.length;
+  var images = document.querySelectorAll(selector);
+  var numImages = images.length;
 
-    if (numImages > 0) {
+  if (numImages > 0) {
+    if (preferNativeLazyLoad && 'loading' in HTMLImageElement.prototype) {
       for (var i = 0; i < numImages; i++) {
-        if ('dataset' in images[i] && 'src' in images[i].dataset) {
-          images[i].src = images[i].dataset.src;
-        }
+        var keys = ['src', 'srcset'];
 
-        if ('srcset' in images[i].dataset) {
-          images[i].srcset = images[i].dataset.srcset;
+        for (var j = 0; j < keys.length; j++) {
+          if (images[i].hasAttribute('data-' + keys[j])) {
+            var value = images[i].getAttribute('data-' + keys[j]);
+            images[i].setAttribute(keys[j], value);
+          }
         }
       }
+
+      return;
     }
 
-    return;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = src;
+    document.body.appendChild(script);
   }
-
-  var script = document.createElement('script');
-  script.async = true;
-  script.src = src;
-  document.body.appendChild(script);
 })(
               'img',
               'https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js',
-              true
+              false
             );
           </script></body></html>
