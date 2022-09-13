@@ -13,9 +13,9 @@ $earl: #BECEDE;
 body{
   padding: 0;
   margin: 0;
-  color: #fff;
+  color: $tertiary;
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14pt;
   font-kerning: 1pt;
   min-height: 100vh;
@@ -56,10 +56,12 @@ h3 {
 p {
   width: 100%;
   max-width: 70ch;
+  line-height: 1.75rem;
 }
 
 strong {
   font-weight: 700;
+  color: $dark
 }
 
 a {

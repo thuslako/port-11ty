@@ -1,3 +1,5 @@
+
+const fs = require("fs");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginNavigation = require("@11ty/eleventy-navigation");
@@ -9,10 +11,6 @@ module.exports = (eleventyConfig)=>{
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("js");
-
-    /* Markdown Overrides */
-    const markdownIt = require("markdown-it");
-    const markdownItAnchor = require("markdown-it-anchor");
 
     const options = {
         html: true,
@@ -27,6 +25,21 @@ module.exports = (eleventyConfig)=>{
     eleventyConfig.setLibrary("md", markdownIt(options)
         .use(markdownItAnchor, opts)
     );
+
+    // Browsersync Overrides
+    eleventyConfig.setBrowserSyncConfig({
+        callbacks: {
+          ready: function(err, browserSync) {
+            const content_404 = fs.readFileSync('_site/404.html');
+    
+            browserSync.addMiddleware("*", (req, res) => {
+              // Provides the 404 content without redirect.
+              res.write(content_404);
+              res.end();
+            });
+          }
+        }
+    });
     eleventyConfig.addCollection('albums', collection => {
         return [
           ...collection.getFilteredByGlob('./albums/**/*.md')

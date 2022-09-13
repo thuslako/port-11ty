@@ -1,4 +1,5 @@
 {
+  "license":"0BSD",
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
@@ -10,11 +11,18 @@
     "three": "^0.144.0"
   },
   "scripts": {
-    "scss": "sass --style=compressed scss/style.scss  ./css/style.css",
-    "start": "eleventy --serve",
-    "build": "eleventy"
+    "scss": "sass -w --style=compressed scss/style.scss  ./css/style.css",
+    "start": "npx @11ty/eleventy --serve",
+    "build": "sass --style=compressed scss/style.scss  ./css/style.css && npx @11ty/eleventy"
   },
   "devDependencies": {
     "eleventy-plugin-lazyimages": "^2.1.2"
+  },
+  "repository":{
+    "type": "git",
+    "url":"https://github.com/thuslako/port-11ty"
+  },
+  "engines": {
+    "node": ">=12.20"
   }
 }
