@@ -16,9 +16,11 @@ templateClass: portfolio
 <header>
   <span class="copywrite">&copy; Lukundu</span>
 </header>
- <main class="container"  >
-    {% if title %}<h1>{{title}}</h1>{% endif %}
-    {{ content | safe }}
+ <main>
+    <div class="container" > 
+      {% if title %}<h1>{{title}}</h1>{% endif %}
+      {{ content | safe }}
+    </div>
   </main>
   <footer>
     <img src="./assets/seattle.jpg" alt="me seattle"/>
