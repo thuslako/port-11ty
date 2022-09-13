@@ -1,5 +1,5 @@
 ---
-templateClass: body
+templateClass: body-dark
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -13,23 +13,13 @@ templateClass: body
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Noto+Sans&display=swap" rel="stylesheet" /> 
 </head>
 <body {% if templateClass %} class="{{templateClass}}" {% endif %}>
-<header>
-  <span class="copywrite">&copy; Lukundu</span>
-</header>
+<nav>
+    <span class="logo"><a href="/">&copy; Lukundu</a></span>
+</nav>
  <main class="container"  >
-
     {% if title %}<h1>{{title}}</h1>{% endif %}
     {{ content | safe }}
   </main>
-  <footer>
-    <img src="./assets/seattle.jpg" alt="me seattle"/>
-    <div class="connections social-links">
-    <a class="link" href="https://www.instagram.com/lukundu/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-    <a class="link" href="https://ca.linkedin.com/in/lukundu-lako" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-    <a class="link" href="https://github.com/thuslako" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
-    <a class="link" rel="noopener" target="_blank" href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing" download="">CV</a>
-    </div>
-  </footer>
   <script src="{{ '/js/index.js' | url }}" type="text/javascript"></script>
   <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js" type="text/javascript"></script>
 </body>

@@ -1,6 +1,7 @@
 # Dependency directories
 node_modules/
 jspm_packages/
+_site/
 # Mac files
 .DS_Store
 
@@ -8,6 +9,7 @@ jspm_packages/
 yarn-error.log
 .pnp/
 .pnp.js
+.netlify/
 # Yarn Integrity file
 .yarn-integrity
 
