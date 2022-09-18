@@ -1,9 +1,10 @@
 {
-  "license":"0BSD",
+  "license": "0BSD",
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@types/markdown-it": "^12.2.3",
+    "gsap": "^3.11.1",
     "jpeg-js": "^0.4.4",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.5",
@@ -18,9 +19,9 @@
   "devDependencies": {
     "eleventy-plugin-lazyimages": "^2.1.2"
   },
-  "repository":{
+  "repository": {
     "type": "git",
-    "url":"https://github.com/thuslako/port-11ty"
+    "url": "https://github.com/thuslako/port-11ty"
   },
   "engines": {
     "node": ">=14.18"
