@@ -41,7 +41,7 @@ module.exports = (eleventyConfig) => {
     },
   });
   eleventyConfig.addCollection("albums", (collection) => {
-    return [...collection.getFilteredByGlob("./albums/**/*.njk")].reverse();
+    return collection.getFilteredByTag("album");
   });
 
   return {

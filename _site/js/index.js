@@ -1,15 +1,16 @@
-const copyText = (text)=>{
-  const content = text.getAttribute('data-copy')
-  if(content){
+const copyText = (text) => {
+  const content = text.getAttribute("data-copy");
+  if (content) {
     navigator.clipboard.writeText(content);
     text.children[0].classList.add("show");
-    setTimeout(()=>{text.children[0].classList.toggle("show");},1500)
+    setTimeout(() => {
+      text.children[0].classList.toggle("show");
+    }, 1500);
+  } else {
+    return;
   }
-  else{
-    return
-  }
-}
+};
 
-(()=>{
-  console.log('My portfolio')
-})()
+(() => {
+  console.log("My portfolio");
+})();

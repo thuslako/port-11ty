@@ -15,14 +15,31 @@ $earl: #BECEDE;
 body{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows:auto 1fr auto;
   min-height: 100vh;
-  color: $tertiary;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 14pt;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.portfolio {
+  grid-template-rows: auto 1fr auto;
   background-color: $earl;
+  color: $tertiary;
+  .copywrite {
+    color: $tertiary;
+    font-weight: 700;
+  }
+}
+
+.album {
+  grid-template-rows: auto 1fr;
+  background-color: $tertiary;
+    color: $earl;
+    .copywrite {
+      color: $void;
+      font-weight: 700;
+    }
 }
 
 .container {
@@ -69,10 +86,6 @@ header{
   width: 100%;
   height: 100px;
   padding: 1rem 1.5rem;
-  .copywrite{
-    color: $tertiary;
-    font-weight: 700;
-  }
 }
 
 .link::before {

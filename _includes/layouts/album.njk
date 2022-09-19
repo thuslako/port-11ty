@@ -1,5 +1,6 @@
 ---
 templateClass: portfolio
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -18,12 +19,9 @@ templateClass: portfolio
 </header>
  <main>
     <div class="container" > 
-      {% if title %}<h1>{{title}}</h1>{% endif %}
       {{ content | safe }}
     </div>
   </main>
-  <footer>
-  </footer>
   <script src="{{ '/js/index.js' | url }}" type="text/javascript"></script>
 </body>
 </html>
