@@ -1,5 +1,7 @@
 footer {
-  position: relative;
+  position:sticky;
+  display: block;
+  top: 100vh;
   width: 100%;
   height: 24rem;
   overflow: hidden;
