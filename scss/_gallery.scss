@@ -1,27 +1,25 @@
 
 .gallery{
+    position: relative;
     display: grid;
     grid-auto-flow: column;
-    overflow-y: hidden;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    &  .slide {
-        display: block;
-        width: 100vw;
-        height: calc( 100vh - 15rem);
-        scroll-snap-align: start;
-        &>div{
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+    width: 100vw;
+    height: 700px;
+}
 
-        &>img{
-            object-fit: contain;
-            object-position: center;
-            width: 100%;
-            height: auto;
-        }
+.slide {
+    background-color: #000;
+    width: 100vw;
+    height: 100%;
+    &>.content {
+        display: block;
+        padding: 1rem 1.5rem;
     }
 
+    &>img {
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        height: 700px;
+    }
 }

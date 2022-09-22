@@ -12,9 +12,10 @@ $earl: #BECEDE;
 
 body{
   display: block;
+  width: 100%;
   padding: 0;
   margin: 0;
-  min-height: 100vh;
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 14pt;
