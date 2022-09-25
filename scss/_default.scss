@@ -11,14 +11,20 @@ $earl: #BECEDE;
 }
 
 body{
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 14pt;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main{
+  flex: 1;
 }
 
 .portfolio {
