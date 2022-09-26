@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 const slides = gsap.utils.toArray(".slide");
 const gallery = document.getElementById("_gallery");
-gsap.to(slides, {
+const album = gsap.to(slides, {
   xPercent: -100 * (slides.length - 1),
   ease: "none",
   y: "0",
@@ -21,8 +21,22 @@ gsap.to(slides, {
   },
 });
 slides.forEach((slide, i) => {
+  gsap.set(slides, { css: { opacity: 0 } });
+  gsap.to(slide, {
+    css: { opacity: 1 },
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: slide,
+      containerAnimation: album,
+      start: "left center",
+      toggleActions: "play none none reset",
+      id: i,
+    },
+  });
   ScrollTrigger.create({
     trigger: slide,
+    containerAnimation: album,
+    marker: true,
     start: () =>
       `top top-=${
         (slide.offsetLeft - window.innerWidth / 2) *
