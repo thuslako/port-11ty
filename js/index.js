@@ -11,7 +11,7 @@ const album = gsap.to(slides, {
     end: "bottom top",
     pin: true,
     pinSpacing: "margin",
-    scrub: 1,
+    scrub: 0.3,
     snap: {
       snapTo: 1 / (slides.length - 1),
       duration: 0.02,
@@ -21,9 +21,23 @@ const album = gsap.to(slides, {
   },
 });
 slides.forEach((slide, i) => {
-  gsap.set(slides, { css: { opacity: 0 } });
-  gsap.to(slide, {
-    css: { opacity: 1 },
+  gsap.set(slide.children[0], {
+    css: {
+      visibility: "hidden",
+      width: "20%",
+      height: "20%",
+      "border-radius": "100%",
+    },
+    scale: 0.1,
+  });
+  gsap.to(slide.children[0], {
+    css: {
+      visibility: "visible",
+      width: "100%",
+      height: "100%",
+      "border-radius": "0%",
+    },
+    scale: 1,
     duration: 1.5,
     scrollTrigger: {
       trigger: slide,
