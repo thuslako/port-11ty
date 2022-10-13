@@ -1,4 +1,4 @@
-.btn-primary{
+.btn-primary {
   width: clamp(100%, 10rem, 12rem);
   background-color: $secondary;
   padding-left: 0.4rem;
@@ -9,10 +9,9 @@
   color: $tertiary;
   font-weight: 600;
   filter: drop-shadow(0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.07));
-  
 }
 
-.btn-cv{
+.btn-cv {
   position: relative;
   width: 3rem;
   background-color: $primary;
@@ -24,17 +23,16 @@
   font-size: 1rem;
   filter: drop-shadow(0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.07));
 
-  ion-icon{
+  ion-icon {
     position: absolute;
     top: 0.8rem;
     margin-left: 0.3rem;
   }
 
-  &:hover{
+  &:hover {
     background-color: $tertiary;
-    color: $secondary!important;
+    color: $secondary !important;
   }
-  
 }
 
 .inline-copy {
@@ -57,6 +55,7 @@
     top: 0.1rem;
     right: -5rem;
     padding: 0.4rem;
+    border-radius: 2px;
   }
 
   .show {
@@ -66,10 +65,10 @@
     animation: popup 0.5s;
   }
 
-
   ion-icon {
     margin-left: 0.8rem;
     margin-right: 0.8rem;
+    pointer-events: none;
   }
 
   @-webkit-keyframes popup {
@@ -82,7 +81,7 @@
       transform: translateY(-5px);
     }
   }
-  
+
   @keyframes popup {
     from {
       opacity: 0;
@@ -93,5 +92,4 @@
       transform: translateY(-5px);
     }
   }
-
 }
