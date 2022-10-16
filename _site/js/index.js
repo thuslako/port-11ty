@@ -5,7 +5,7 @@
     navigator.clipboard.writeText(content);
     btn.target.children[0].classList.add("show");
     setTimeout(() => {
-      btn.target.children[0].classList.toggle("show");
+      btn.target.children[0].classList.remove("show");
     }, 2000);
   };
   document

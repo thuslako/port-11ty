@@ -59,10 +59,10 @@
   }
 
   .show {
-    translate: translate all ease-in-out;
-    visibility: visible;
-    -webkit-animation: popup 0.5s;
-    animation: popup 0.5s;
+    --webkit-transition: translate all ease-in-out;
+    transition: translate all ease-in-out;
+    animation-name: popup;
+    animation-duration: 2s;
   }
 
   ion-icon {
@@ -71,25 +71,13 @@
     pointer-events: none;
   }
 
-  @-webkit-keyframes popup {
-    from {
-      opacity: 0;
-      transform: translateY(-5px);
-    }
-    to {
-      opacity: 0;
-      transform: translateY(-5px);
-    }
-  }
-
   @keyframes popup {
-    from {
-      opacity: 0;
-      transform: translateY(-5px);
+    0% {
+      transform: translateX(10px);
     }
-    to {
-      opacity: 0;
-      transform: translateY(-5px);
+    100% {
+      visibility: visible;
+      transform: translateX(5px);
     }
   }
 }
