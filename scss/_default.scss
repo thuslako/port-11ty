@@ -1,38 +1,35 @@
 $primary: #008538;
-$secondary: #EBFF72;
-$tertiary: #485460; 
+$secondary: #5286b9;
+$tertiary: #485460;
 $dark: #2f3542;
 $void: #7f8fa6;
-$earl: #BECEDE;
+$dew: #dbe8f4;
+$earl: #eff4f9;
 
-
-*{
+* {
   box-sizing: border-box;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14pt;
   -moz-osx-font-smoothing: grayscale;
 }
 
-main{
+main {
   flex: 1;
 }
 
-.portfolio {
-  color: $tertiary;
-  .copywrite {
-    color: $tertiary;
-    font-weight: 700;
-  }
+.copywrite {
+  color: $secondary;
+  font-weight: 700;
 }
 
 .portfolio,
@@ -42,43 +39,42 @@ main{
 
 .album {
   background-color: $tertiary;
-    color: $earl;
-    .copywrite {
-      color: $void;
-      font-weight: 700;
-    }
+  color: $earl;
+  .copywrite {
+    color: $void;
+    font-weight: 700;
+  }
 }
 
 .container {
   position: relative;
-  max-width: 1400px;
+  max-width: 1200px;
   width: 100%;
   height: 100%;
   margin: 0 auto;
   padding: 1rem 1.5rem;
 }
 
-h1{
+h1 {
   font-size: 6rem;
   margin: 0.4rem 0;
 }
 
-h1, 
-h2, 
+h1,
+h2,
 h3 {
-  font-family: 'DM Serif Display', serif;
-  color:$secondary;
+  color: $tertiary;
 }
 
 p {
   width: 100%;
-  max-width: 70ch;
+  max-width: 80ch;
   line-height: 1.75rem;
 }
 
 strong {
   font-weight: 700;
-  color: $dark
+  color: $dark;
 }
 
 a {
@@ -89,17 +85,17 @@ a {
   font-weight: bold;
 }
 
-header{
+header {
   width: 100%;
   height: 100px;
   padding: 1rem 1.5rem;
 }
 
 .link::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
-  background: linear-gradient(transparent 50%, $secondary 50%, $secondary 85%,transparent 85%,transparent 100%);
+  background: linear-gradient(transparent 50%, $secondary 50%, $secondary 85%, transparent 85%, transparent 100%);
   width: 0;
   height: 50px;
   bottom: -5px;
@@ -111,7 +107,7 @@ header{
 }
 
 .link:hover {
-  color:$tertiary;
+  color: $tertiary;
 }
 
 .link:hover::before {
@@ -121,13 +117,12 @@ header{
 
 .intro {
   display: inline-block;
-  padding-bottom:2rem;
+  padding-bottom: 2rem;
   margin-top: 1rem;
 }
 
-
-@media screen and (max-width: 768px ){
-  .container{
-      flex-direction: column;
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
   }
 }
