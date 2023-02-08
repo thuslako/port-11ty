@@ -40,9 +40,6 @@ module.exports = (eleventyConfig) => {
       },
     },
   });
-  eleventyConfig.addCollection("albums", (collection) => {
-    return collection.getFilteredByTag("album");
-  });
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],

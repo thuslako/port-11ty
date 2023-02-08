@@ -1,4 +1,4 @@
-(() => {
+(function () {
   const copyText = (btn) => {
     const content = btn.target.getAttribute("data-copy");
     if (!content) return;
@@ -11,5 +11,4 @@
   document
     .getElementById("copy-email")
     .addEventListener("click", copyText, false);
-  console.log("My portfolio");
 })();

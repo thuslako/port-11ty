@@ -1,10 +1,12 @@
-$primary: #008538;
-$secondary: #5286b9;
+$primary: #6c5ce7;
+$secondary: #42a0ff;
 $tertiary: #485460;
 $dark: #2f3542;
 $void: #7f8fa6;
 $dew: #dbe8f4;
 $earl: #eff4f9;
+$chalk: #ced6e0;
+$ghost: #fff;
 
 * {
   box-sizing: border-box;
@@ -12,6 +14,7 @@ $earl: #eff4f9;
 
 body {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
@@ -23,13 +26,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#showcase canvas {
+  z-index: -1;
+  position: absolute;
+}
+
 main {
   flex: 1;
+  z-index: 10;
 }
 
 .copywrite {
   color: $secondary;
   font-weight: 700;
+  z-index: 10;
 }
 
 .portfolio,

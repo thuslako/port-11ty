@@ -4,14 +4,14 @@
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@types/markdown-it": "^12.2.3",
-    "jpeg-js": "^0.4.4",
+    "fs": "^0.0.1-security",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.5",
     "sass": "^1.54.9",
-    "three": "^0.144.0"
+    "three": "^0.148.0"
   },
   "scripts": {
-    "scss": "sass -w --style=compressed scss/style.scss  ./css/style.css",
+    "style": "sass -w --style=compressed scss/style.scss  ./css/style.css",
     "start": "npx @11ty/eleventy --serve",
     "build": "sass --style=compressed scss/style.scss  ./css/style.css && npx @11ty/eleventy"
   },

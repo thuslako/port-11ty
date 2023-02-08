@@ -1,20 +1,24 @@
-<!DOCTYPE html><html lang="en"><head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     
-      <title>👺 | Home</title>
+      <title>| Home</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio showcase for projects and photography and mini shop for limited prints">
-    <link href="/css/style.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="/assets/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&amp;family=Noto+Sans&amp;display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="/assets/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Noto+Sans&display=swap" rel="stylesheet"/>
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="/js/index.js"></script>
   </head>
-  <body class="portfolio">
+  <body  id="showcase"  class="portfolio" >
     <header>
-      <span class="copywrite">© Lukundu</span>
+      <span class="copywrite">&copy; Lukundu</span>
     </header>
     <main>
       <div class="container">
@@ -48,7 +52,7 @@
       </div>
     </main>
     <footer>
-      <img src="data:image/png;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAZABkDASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAABgABBAUCAwf/xAAoEAACAQIDBgcAAAAAAAAAAAABAgADBAURIQYUFUFScRMiMTQ1UWH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AvLfG3YnQDKbBjLq4J1glb31JFcsx8og5abYb3jpoU0Iopof0wOs8WDgHLWPxJumBb3td6YaimQPMxeNf9UCjN29/aGqEREyz05yl2es6NPFKpKAqdQfoybg/w47RsM9zAKUqqFAHKZbx2kJfSNA//9k=" alt="me seattle" data-src="/assets/seattle.jpg" class="lazyload" width="4000" height="4000">
+      
       <div class="connections social-links">
         <a class="link" href="https://www.instagram.com/lukundu/" target="_blank">
           <ion-icon name="logo-instagram"></ion-icon>
@@ -59,39 +63,14 @@
         <a class="link" href="https://github.com/thuslako" target="_blank">
           <ion-icon name="logo-github"></ion-icon>
         </a>
-        <a class="link" rel="noopener" target="_blank" href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing" download="">CV</a>
+        <a
+          class="link"
+          rel="noopener"
+          target="_blank"
+          href="https://drive.google.com/file/d/1KtCAx1eRWHA5dEXIIV9AAlHJsmVphoW1/view?usp=sharing"
+          download="">CV</a>
       </div>
     </footer>
-  
-<script>
-            (function (selector, src, preferNativeLazyLoad) {
-  var images = document.querySelectorAll(selector);
-  var numImages = images.length;
-
-  if (numImages > 0) {
-    if (preferNativeLazyLoad && 'loading' in HTMLImageElement.prototype) {
-      for (var i = 0; i < numImages; i++) {
-        var keys = ['src', 'srcset'];
-
-        for (var j = 0; j < keys.length; j++) {
-          if (images[i].hasAttribute('data-' + keys[j])) {
-            var value = images[i].getAttribute('data-' + keys[j]);
-            images[i].setAttribute(keys[j], value);
-          }
-        }
-      }
-
-      return;
-    }
-
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = src;
-    document.body.appendChild(script);
-  }
-})(
-              'img',
-              'https://cdn.jsdelivr.net/npm/lazysizes@5/lazysizes.min.js',
-              false
-            );
-          </script></body></html>
+    <script src="/js/waves.js"></script>
+  </body>
+</html>

@@ -7,7 +7,7 @@ templateClass: portfolio
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     {% if title %}
-      <title>👺 | {{ title }}</title>
+      <title>| {{ title }}</title>
     {% else %}
       <title>Lukundu</title>
     {% endif %}
@@ -18,9 +18,10 @@ templateClass: portfolio
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Noto+Sans&display=swap" rel="stylesheet"/>
     <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js" integrity="sha512-WJXVjqeINVpi5XXJ2jn0BSCfp0y80IKrYh731gLRnkAS9TKc5KNt/OfLtu+fCueqdWniouJ1ubM+VI/hbo7POQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="{{ '/js/index.js' | url }}"></script>
   </head>
-  <body {% if templateClass %} class="{{ templateClass }}" {% endif %}>
+  <body  id="showcase" {% if templateClass %} class="{{ templateClass }}" {% endif %}>
     <header>
       <span class="copywrite">&copy; Lukundu</span>
     </header>
@@ -30,7 +31,7 @@ templateClass: portfolio
       </div>
     </main>
     <footer>
-      <img src="{{ '/assets/seattle.jpg' | url }}" alt="me seattle"/>
+      {# <img src="{{ '/assets/seattle.jpg' | url }}" alt="me seattle"/> #}
       <div class="connections social-links">
         <a class="link" href="https://www.instagram.com/lukundu/" target="_blank">
           <ion-icon name="logo-instagram"></ion-icon>
@@ -49,5 +50,6 @@ templateClass: portfolio
           download="">CV</a>
       </div>
     </footer>
+    <script src="{{ '/js/waves.js' | url }}"></script>
   </body>
 </html>
