@@ -1,7 +1,8 @@
 # Dependency directories
 node_modules/
 jspm_packages/
- _site/
+_site/
+.sass-cache/
 # Mac files
 .DS_Store
 
