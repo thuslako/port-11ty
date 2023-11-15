@@ -1,0 +1,20 @@
+---
+layout: layouts/default.njk
+title: Gallery
+eleventyImport:
+  collections: ["albums"]
+eleventyNavigation:
+  key: Gallery
+  order: 3
+---
+
+<article>
+  <h1>My Albums</h1>
+  <p>These albums are curated from my ever epensive image collection and work. Enjoy 🤙🏿</p>
+  <ul class="albums">
+    {%- for album in collections.albums -%}
+      <li style="background-image:url({{album.data.cover | url}})" class="{{album.data.colSize}}">
+        <a href="{{ album.url }}">{{ album.data.title }}</a>
+      </li>
+    {%- endfor -%}
+  </article>
