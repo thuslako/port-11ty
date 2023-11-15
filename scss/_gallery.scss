@@ -34,6 +34,14 @@
     &:first-child {
         height: 15rem;
         background-color:$secondary;
+        padding:1rem;
+
+        @media  screen and (max-width: 890px) {
+            & {
+                height: 100%;
+            }
+            
+        }
     }
 
     .info-btn {
