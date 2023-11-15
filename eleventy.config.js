@@ -51,7 +51,6 @@ module.exports = (eleventyConfig) => {
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     passthroughFileCopy: true,
-    layout: "layouts/default.njk",
     dir: {
       input: "pages",
       includes: "../_includes",

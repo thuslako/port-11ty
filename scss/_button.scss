@@ -6,7 +6,7 @@
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;
   border-radius: 0.3rem;
-  color: $tertiary;
+  color: $void;
   font-weight: 600;
   filter: drop-shadow(0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.07));
 }
@@ -30,8 +30,8 @@
   }
 
   &:hover {
-    background-color: $tertiary;
-    color: $secondary !important;
+    background-color: $secondary;
+    color: $void !important;
   }
 }
 
@@ -40,7 +40,7 @@
   position: relative;
   display: inline-block;
   padding: 0.5rem;
-  background-color: $tertiary;
+  background-color: $primary;
   color: #fefefe;
   border-radius: 0.5rem;
   border: none;
@@ -52,7 +52,7 @@
     visibility: hidden;
     opacity: 0;
     background-color: $secondary;
-    color: $tertiary;
+    color: $primary;
     top: 0.1rem;
     right: -5rem;
     padding: 0.4rem;
