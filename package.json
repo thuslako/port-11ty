@@ -25,6 +25,6 @@
     "url": "https://github.com/thuslako/port-11ty"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=18.0"
   }
 }
