@@ -60,12 +60,13 @@
         figcaption {
             display: none;
         }
-        &:hover {
-            background-color: #fefefe;
-            color: #000;
-            figcaption {
-                display: block;
-            }
+    }
+
+    .info-btn-open {
+        background-color: #fefefe;
+        color: #000;
+        figcaption {
+            display: block;
         }
     }
 

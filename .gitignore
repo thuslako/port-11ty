@@ -1,16 +1,19 @@
 # Dependency directories
 node_modules/
 jspm_packages/
-_site/
+_site/**/*
 .sass-cache/
+.lazyimages.json
 # Mac files
 .DS_Store
 
 # Yarn
 yarn-error.log
+yarn.lock
 .pnp/
 .pnp.js
 .netlify/
+
 # Yarn Integrity file
 .yarn-integrity
 

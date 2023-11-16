@@ -8,7 +8,25 @@
       btn.target.children[0].classList.remove("show");
     }, 2000);
   };
-  document
-    .getElementById("copy-email")
-    .addEventListener("click", copyText, false);
+  const copyEmail = document.getElementById("copy-email")
+   if(copyEmail)copyEmail.addEventListener("click", copyText, false);
+
+  // toggle gallery info button
+
+  const galleryInfobtns = document.getElementsByClassName("info-btn");
+  galleryInfobtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.target.parentElement.classList.toggle("info-btn-open");
+    });
+    btn.addEventListener("mouseover", (e) => {
+      e.target.parentElement.classList.add("info-btn-open");
+    });
+    btn.addEventListener("mouseout", (e) => {
+      e.target.parentElement.classList.remove("info-btn-open");
+    });
+  });
+
+  // album lightbox
+  // const album = document.getElementsByClassName("album");
+
 })();
