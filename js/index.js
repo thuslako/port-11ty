@@ -1,3 +1,4 @@
+import Lightbox from "./gallery.js";
 (function () {
   const copyText = (btn) => {
     const content = btn.target.getAttribute("data-copy");
@@ -26,7 +27,10 @@
     });
   });
 
-  // album lightbox
-  // const album = document.getElementsByClassName("album");
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) {
+    const lightbox = new Lightbox();
+    lightbox.init();
+  }
 
 })();

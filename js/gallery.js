@@ -1,64 +1,52 @@
-(() => {
-  gsap.registerPlugin(ScrollTrigger);
-  const slides = gsap.utils.toArray(".slide");
-  const gallery = document.getElementById("_gallery");
-  const album = gsap.to(slides, {
-    xPercent: -100 * (slides.length - 1),
-    ease: "none",
-    y: "0",
-    scrollTrigger: {
-      trigger: ".gallery",
-      start: "center 50%",
-      end: "bottom top",
-      pin: true,
-      pinSpacing: "margin",
-      scrub: 0.3,
-      snap: {
-        snapTo: 1 / (slides.length - 1),
-        duration: 0.02,
-        ease: "power2.inOut",
-      },
-      end: `+=${gallery.offsetWidth}`,
-    },
-  });
-  slides.forEach((slide, i) => {
-    gsap.set(slide.children[0], {
-      css: {
-        visibility: "hidden",
-        width: "20%",
-      },
-      scale: 0.1,
+// class Lightbox that will generate a lightbox gallery from the images from .slide elements on page
+// adding keyboard arrow key navigation and closing lightbox on click outside of image
+
+class Lightbox {
+  constructor() {
+    this.lightbox = document.getElementById("lightbox");
+    this.slides = document.getElementsByClassName("slide");
+    this.lightbox.addEventListener("click", (e) => {
+      const lightboxImg = document.querySelector("#lightbox img");
+      if (e.target === lightboxImg) return;
+      this.lightbox.classList.remove("lightbox-open");
+      this.lightbox.innerHTML = "";
+      document.body.classList.remove("no-scroll");
     });
-    gsap.to(slide.children[0], {
-      css: {
-        visibility: "visible",
-        width: "100%",
-      },
-      scale: 1,
-      duration: 1.5,
-      scrollTrigger: {
-        trigger: slide,
-        containerAnimation: album,
-        start: "left center",
-        toggleActions: "play none none reset",
-        id: i,
-      },
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "Escape") {
+        this.lightbox.classList.remove("lightbox-open");
+        this.lightbox.innerHTML = "";
+        document.body.classList.remove("no-scroll");
+      }
     });
-    ScrollTrigger.create({
-      trigger: slide,
-      containerAnimation: album,
-      marker: true,
-      start: () =>
-        `top top-=${
-          (slide.offsetLeft - window.innerWidth / 2) *
-          (gallery.offsetWidth / (gallery.offsetWidth - window.innerWidth))
-        }`,
-      end: () =>
-        `+=${
-          slide.offsetWidth *
-          (gallery.offsetWidth / (gallery.offsetWidth - window.innerWidth))
-        }`,
-      toggleClass: { targets: slide, className: "active" },
-    });
-  });
-})();
+  }
+
+  init() {
+    if (this.slides) {
+      for (let i = 0; i < this.slides.length; i++) {
+        const slide = this.slides[i];
+        const images = slide.getElementsByTagName("img");
+        for (let j = 0; j < images.length; j++) {
+          const image = images[j];
+          image.addEventListener("click", (e) => {
+            e.preventDefault();
+            const lightboxContent = document.createElement("div");
+            lightboxContent.classList.add("lightbox-content");
+            const lightboxClose = document.createElement("button");
+            lightboxClose.classList.add("lightbox-close");
+            lightboxClose.innerHTML = `<ion-icon name="close"></ion-icon>`;
+            const lightboxImg = document.createElement("img");
+            this.lightbox.classList.add("lightbox-open");
+            document.body.classList.add("no-scroll");
+            lightboxImg.src = image.currentSrc;
+            // lightboxContent.appendChild(lightboxClose);
+            lightboxContent.appendChild(lightboxImg);
+            this.lightbox.appendChild(lightboxContent);
+          });
+        }
+      }
+    }
+  }
+}
+
+export default Lightbox;

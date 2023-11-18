@@ -3,6 +3,7 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const lazyImagesPlugin = require("eleventy-plugin-lazyimages");
+const Image = require("@11ty/eleventy-img");
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.addPlugin(pluginNavigation);
@@ -41,7 +42,26 @@ module.exports = (eleventyConfig) => {
     },
   });
 
-  
+  //write image shortcode to generate webp, taking image url and description images using eleventy-img
+  eleventyConfig.addNunjucksAsyncShortcode("image", async (src, alt, sizes) => {
+    if (!alt) {
+      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+    }
+    let metadata = await Image(src, {
+      widths: [300, 600, 900, "auto"],
+      formats: ["webp"],
+      urlPath: "/assets/",
+      outputDir: "./_site/assets/",
+    });
+
+    let imageAttributes = {
+      alt,
+      sizes,
+      loading: "lazy",
+      decoding: "async",
+    };
+    return Image.generateHTML(metadata, imageAttributes);
+  });
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],

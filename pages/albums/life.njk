@@ -15,7 +15,8 @@ colSize: col-span-1
   </div>
   <div class="slide">
     <figure>
-      <img src="{{ '/assets/life/summer_fishing.jpg' | url }}" alt="boy fishing by the river"/>
+      {# new image passed through image shortcode to generate webp #}
+      {% image './assets/life/summer_fishing.jpg', 'Summer fishing', "auto" %}
       <button class="info-btn">
         <figcaption>Summer fishing</figcaption>
         <ion-icon name="information-circle-outline"></ion-icon>
@@ -24,7 +25,7 @@ colSize: col-span-1
   </div>
   <div class="slide">
     <figure>
-      <img src="{{ '/assets/life/summer_camper.jpg' | url }}" alt="parked camper"/>
+      {% image './assets/life/summer_camper.jpg', 'Summer camper', "auto" %}
       <button class="info-btn">
         <figcaption>Summer camper</figcaption>
         <ion-icon name="information-circle-outline"></ion-icon>
@@ -33,7 +34,7 @@ colSize: col-span-1
   </div>
   <div class="slide">
     <figure>
-      <img src="{{ '/assets/life/h5.jpg' | url }}" alt="Jump for high five"/>
+      {% image './assets/life/h5.jpg', 'High five at Capilano', "auto" %}
       <button class="info-btn">
         <figcaption>High five at Capilano </figcaption>
         <ion-icon name="information-circle-outline"></ion-icon>
@@ -42,7 +43,7 @@ colSize: col-span-1
   </div>
   <div class="slide flex-100 ">
     <figure>
-      <img src="{{ '/assets/life/engerizer.jpg' | url }}" alt="engerizer bunny"/>
+      {% image './assets/life/engerizer.jpg', 'Engerizer bunny', "auto" %}
       <button class="info-btn">
         <figcaption>engerizer bunny</figcaption>
         <ion-icon name="information-circle-outline"></ion-icon>
@@ -51,7 +52,7 @@ colSize: col-span-1
   </div>
   <div class="slide">
     <figure>
-      <img src="{{ '/assets/life/cow.jpg' | url }}" alt="cow mascot"/>
+      {% image './assets/life/cow.jpg', 'Shop cow mascot', "auto" %}
       <button class="info-btn">
         <figcaption>Shop cow mascot</figcaption>
         <ion-icon name="information-circle-outline"></ion-icon>
@@ -60,7 +61,7 @@ colSize: col-span-1
   </div>
   <div class="slide">
     <figure>
-      <img src="{{ '/assets/life/subway-ny.jpg' | url }}" alt="inside subway"/>
+      {% image './assets/life/subway-ny.jpg', 'Inside subway', "auto" %}
       <button class="info-btn">
         <figcaption>Father and son</figcaption>
         <ion-icon name="information-circle-outline"></ion-icon>
