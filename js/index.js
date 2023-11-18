@@ -19,12 +19,12 @@ import Lightbox from "./gallery.js";
     btn.addEventListener("click", (e) => {
       e.target.parentElement.classList.toggle("info-btn-open");
     });
-    btn.addEventListener("mouseover", (e) => {
-      e.target.parentElement.classList.add("info-btn-open");
-    });
     btn.addEventListener("mouseout", (e) => {
-      e.target.parentElement.classList.remove("info-btn-open");
+      e.target.parentElement.classList.toggle("info-btn-open");
     });
+    btn.addEventListener("touchend", (e) => {
+      e.target.parentElement.classList.toggle("info-btn-open");
+    },false);
   });
 
   const lightbox = document.getElementById("lightbox");
