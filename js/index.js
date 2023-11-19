@@ -10,22 +10,21 @@ import Lightbox from "./gallery.js";
     }, 2000);
   };
   const copyEmail = document.getElementById("copy-email")
-   if(copyEmail)copyEmail.addEventListener("click", copyText, false);
+  if (copyEmail) copyEmail.addEventListener("click", copyText, false);
 
   // toggle gallery info button
-
   const galleryInfobtns = document.getElementsByClassName("info-btn");
-  galleryInfobtns.forEach((btn) => {
+  if(galleryInfobtns.length) galleryInfobtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      e.target.parentElement.classList.toggle("info-btn-open");
+      e.preventDefault();
+      e.target.parentNode.classList.add("info-btn-open");
+      setTimeout(() => {
+        e.target.parentNode.classList.remove("info-btn-open");
+      }, 2000);
     });
-    btn.addEventListener("mouseout", (e) => {
-      e.target.parentElement.classList.toggle("info-btn-open");
-    });
-    btn.addEventListener("touchend", (e) => {
-      e.target.parentElement.classList.toggle("info-btn-open");
-    },false);
   });
+
+
 
   const lightbox = document.getElementById("lightbox");
   if (lightbox) {
