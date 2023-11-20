@@ -210,6 +210,13 @@
                 background-color: #fefefe;
                 color: #000;
             }
+
+            @media screen and (max-width: 768px) {
+                & {
+                    bottom: 0.5rem;
+                    right: 0.5rem;
+                }
+            }
         }
 
         img{
