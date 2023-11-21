@@ -17,9 +17,9 @@ import Lightbox from "./gallery.js";
   if(galleryInfobtns.length) galleryInfobtns.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
-      e.target.parentNode.classList.add("info-btn-open");
+      e.target.classList.add("info-btn-open");
       setTimeout(() => {
-        e.target.parentNode.classList.remove("info-btn-open");
+        e.target.classList.remove("info-btn-open");
       }, 2000);
     });
   });
@@ -27,7 +27,8 @@ import Lightbox from "./gallery.js";
 
 
   const lightbox = document.getElementById("lightbox");
-  if (lightbox) {
+  const slides = [...document.getElementsByClassName("slide")];
+  if (lightbox && slides.length) {
     const lightbox = new Lightbox();
     lightbox.init();
   }

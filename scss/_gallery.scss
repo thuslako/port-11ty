@@ -63,11 +63,16 @@
     figcaption {
       display: none;
     }
+
+    ion-icon{
+      pointer-events: none
+    }
   }
 
   .info-btn-open {
     background-color: #fefefe;
     color: #000;
+    
     figcaption {
       display: block;
     }

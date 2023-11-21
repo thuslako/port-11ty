@@ -23,40 +23,37 @@ class Lightbox {
     });
   }
 
-  //write regex to get file name from url "http://localhost:8888/assets/9sIzxYBZZJ-300.webp" 
-  //to get "9sIzxYBZZJ"
-  // const regex = /\/assets\/(.*)-\d+\.webp/;
-
-
   init() {
     if (this.slides.length) {
       this.slides.shift();
       for (let i = 0; i < this.slides.length; i++) {
         const slide = this.slides[i];
         const images = slide.getElementsByTagName("img");
-        for (let j = 0; j < images.length; j++) {
-          const image = images[j];
-          const imageID = this.getfileId(image.currentSrc);
-          this.slideImages.set(imageID, {
+        const image = images[0];
+        const imageID = this.getfileId(image.currentSrc);
+        if(imageID){
+            this.slideImages.set(imageID, {
             next: (i == (this.slides.length-1)? this.slides[0]: this.slides[i+1]),
             prev: (i == 0? this.slides[this.slides.length-1]: this.slides[i-1])
           });
-          image.addEventListener("click", (e) => {
-            e.preventDefault();
-            const lightboxContent = document.createElement("div");
-            lightboxContent.classList.add("lightbox-content");
-            const lightboxClose = document.createElement("button");
-            lightboxClose.classList.add("lightbox-close");
-            lightboxClose.innerHTML = `<ion-icon name="close"></ion-icon>`;
-            const lightboxImg = document.createElement("img");
-            this.lightbox.classList.add("lightbox-open");
-            document.body.classList.add("no-scroll");
-            lightboxImg.src = image.currentSrc;
-            lightboxContent.appendChild(lightboxImg);
-            this.lightbox.appendChild(lightboxClose);
-            this.lightbox.appendChild(lightboxContent);
-          });
         }
+        image.addEventListener("click", (e) => {
+          e.preventDefault();
+          const lightboxContent = document.createElement("div");
+          lightboxContent.classList.add("lightbox-content");
+          const lightboxClose = document.createElement("button");
+          lightboxClose.classList.add("lightbox-close");
+          lightboxClose.innerHTML = `<ion-icon name="close"></ion-icon>`;
+          const lightboxImg = document.createElement("img");
+          this.lightbox.classList.add("lightbox-open");
+          document.body.classList.add("no-scroll");
+          lightboxImg.src = image.currentSrc;
+          this.currentImage = imageID;
+          lightboxContent.appendChild(lightboxImg);
+          this.lightbox.appendChild(lightboxClose);
+          this.lightbox.appendChild(lightboxContent);
+        });
+        
       }
       this.navigate();
     }
@@ -80,10 +77,9 @@ class Lightbox {
     }, false);
   }
   getfileId(url) {
-    console.log(url);
     const regex = /\/assets\/(.*)-\d+\.webp/;
     const id = url.match(regex);
-    return id[1];
+    return id? id[1] : null;
   }
 
   gallery(direction) {

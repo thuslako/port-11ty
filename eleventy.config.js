@@ -48,7 +48,7 @@ module.exports = (eleventyConfig) => {
       throw new Error(`Missing \`alt\` on myImage from: ${src}`);
     }
     let metadata = await Image(src, {
-      widths: [300, 600, 900, "auto"],
+      widths: ["auto"],
       formats: ["webp"],
       urlPath: "/assets/",
       outputDir: "./_site/assets/",
