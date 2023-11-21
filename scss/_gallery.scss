@@ -1,243 +1,240 @@
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.gallery-wrapper{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.gallery-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-.gallery{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .slide {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #000;
+  border-radius: 5px;
+  padding: 1rem;
+  flex: 1 0 35%;
+  & > .content {
+    display: block;
+    padding: 1rem 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      flex: 1 0 100%;
+    }
+  }
+
+  &:first-child {
+    height: 15rem;
+    background-color: $secondary;
+    padding: 1rem;
+
+    @media screen and (max-width: 890px) {
+      & {
+        height: 100%;
+      }
+    }
+  }
+
+  .info-btn {
+    position: absolute;
+    display: flex;
+    gap: 0.2rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #000;
+    color: #fefefe;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    figcaption {
+      display: none;
+    }
+  }
+
+  .info-btn-open {
+    background-color: #fefefe;
+    color: #000;
+    figcaption {
+      display: block;
+    }
+  }
+
+  figure {
     display: flex;
     position: relative;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height:auto;
-    background-color: #000;
-    border-radius: 5px;
-    padding: 1rem;
-    flex: 1 0 35%;
-    &>.content {
-        display: block;
-        padding: 1rem 1.5rem;
-    }
+  }
 
-    @media screen and (max-width: 768px) {
-        & {
-            flex: 1 0 100%;
-        }
-    }
-
-    &:first-child {
-        height: 15rem;
-        background-color:$secondary;
-        padding:1rem;
-
-        @media  screen and (max-width: 890px) {
-            & {
-                height: 100%;
-            }
-            
-        }
-    }
-
-    .info-btn {
-        position: absolute;
-        display: flex;
-        gap: 0.2rem;
-        top: 0.5rem;
-        right: 0.5rem;
-        background-color: #000;
-        color: #fefefe;
-        border: none;
-        border-radius: 5px;
-        padding: 0.5rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease-in-out;
-        figcaption {
-            display: none;
-        }
-    }
-
-    .info-btn-open {
-        background-color: #fefefe;
-        color: #000;
-        figcaption {
-            display: block;
-        }
-    }
-
-    figure {
-        display: flex;
-        position: relative;
-        width: 100%;
-    }
-
-    & img {
-        display: block;
-        object-fit: contain;
-        object-position: center;
-        width: 100%;
-        height: auto;
-    }
+  & img {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: auto;
+  }
 }
 
-
-
 .albums {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr auto;
-    gap: 1rem;
-    justify-items: start;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr auto;
+  gap: 1rem;
+  justify-items: start;
 
-    @media screen and (max-width: 768px) {
-        & {
-            grid-template-columns: 1fr;
-        }
+  @media screen and (max-width: 768px) {
+    & {
+      grid-template-columns: 1fr;
     }
+  }
 
-    li {
-        display: flex;
-        border-radius: 5px;
-        overflow: hidden;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 100%;
-        height: 20rem;
+  li {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 20rem;
 
-        a {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            color: #fefefe;
-            font-size: 32pt;
-            text-decoration: none;
-            padding: 0.5rem;
-            background-color: rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s ease-in-out;
-            justify-content: center;
-            align-items: center;
+    a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      color: #fefefe;
+      font-size: 32pt;
+      text-decoration: none;
+      padding: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease-in-out;
+      justify-content: center;
+      align-items: center;
 
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.7);
-            }
-        }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
     }
+  }
 }
 
 .col-span-1 {
-    grid-column: span 1;
+  grid-column: span 1;
 }
 .col-span-2 {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 .col-span-3 {
-    grid-column: span 3;
+  grid-column: span 3;
 }
 
 .flex-100 {
-    flex: 1 0 100%;
+  flex: 1 0 100%;
 }
 .flex-60 {
-    flex: 1 0 60%;
+  flex: 1 0 60%;
 }
 .flex-40 {
-    flex: 1 0 40%;
+  flex: 1 0 40%;
 }
 .flex-20 {
-    flex: 1 0 20%;
+  flex: 1 0 20%;
 }
 
 @media screen and (max-width: 768px) {
-    .col-span-1,
-    .col-span-2,
-    .col-span-3 {
-        grid-column: span 1;
-    }
-    .flex-100,
-    .flex-60,
-    .flex-40,
-    .flex-20 {
-        flex: 1 0 100%;
-    }
+  .col-span-1,
+  .col-span-2,
+  .col-span-3 {
+    grid-column: span 1;
+  }
+  .flex-100,
+  .flex-60,
+  .flex-40,
+  .flex-20 {
+    flex: 1 0 100%;
+  }
 }
 
-// generate light box for .lightbox element 
+// generate light box for .lightbox element
 #lightbox {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    width: 100vw;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  &.lightbox-open {
+    display: flex;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: $secondary;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    --webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    &:hover {
+      background-color: #fefefe;
+      color: #000;
+    }
+
+    @media screen and (max-width: 768px) {
+      & {
+        top: auto;
+        bottom: 1rem;
+      }
+    }
+  }
+  .lightbox-content {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
     height: 100%;
 
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    &.lightbox-open {
-        display: flex;
+    img {
+      display: flex;
+      object-fit: contain;
+      object-position: center;
+      cursor: pointer;
+      width: 90%;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in-out forwards;
     }
-    .lightbox-content {
-        position: relative;
-        display: flex;
-        justify-content: space-around;
-        height: 100%;
 
-        .lightbox-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background-color: $secondary;
-            color: #000;
-            border: none;
-            border-radius: 5px;
-            padding: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-            z-index: 1000;
-            &:hover {
-                background-color: #fefefe;
-                color: #000;
-            }
-
-            @media screen and (max-width: 768px) {
-                & {
-                    bottom: 0.5rem;
-                    right: 0.5rem;
-                }
-            }
-        }
-
-        img{
-            display: flex;
-            object-fit: contain;
-            object-position: center;
-            cursor: pointer;
-            width: 90%;
-            opacity: 0;
-            animation: fadeIn 0.5s ease-in-out forwards;
-        }
-
-        //keyframe animation for image
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+    //keyframe animation for image
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
+  }
 }
-

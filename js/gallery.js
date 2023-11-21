@@ -4,7 +4,7 @@
 class Lightbox {
   constructor() {
     this.lightbox = document.getElementById("lightbox");
-    this.slides = document.getElementsByClassName("slide");
+    this.slides = [...document.getElementsByClassName("slide")];
     this.slideImages = new Map();
     this.currentImage = null;
     this.lightbox.addEventListener("click", (e) => {
@@ -29,16 +29,17 @@ class Lightbox {
 
 
   init() {
-    if (this.slides) {
-      for (let i = 1; i < this.slides.length; i++) {
+    if (this.slides.length) {
+      this.slides.shift();
+      for (let i = 0; i < this.slides.length; i++) {
         const slide = this.slides[i];
         const images = slide.getElementsByTagName("img");
         for (let j = 0; j < images.length; j++) {
           const image = images[j];
           const imageID = this.getfileId(image.currentSrc);
           this.slideImages.set(imageID, {
-            next: (i == (this.slides.length-1)? this.slides[1]: this.slides[i+1]),
-            prev: (i == 1? this.slides[this.slides.length-1]: this.slides[i-1])
+            next: (i == (this.slides.length-1)? this.slides[0]: this.slides[i+1]),
+            prev: (i == 0? this.slides[this.slides.length-1]: this.slides[i-1])
           });
           image.addEventListener("click", (e) => {
             e.preventDefault();
@@ -51,8 +52,8 @@ class Lightbox {
             this.lightbox.classList.add("lightbox-open");
             document.body.classList.add("no-scroll");
             lightboxImg.src = image.currentSrc;
-            lightboxContent.appendChild(lightboxClose);
             lightboxContent.appendChild(lightboxImg);
+            this.lightbox.appendChild(lightboxClose);
             this.lightbox.appendChild(lightboxContent);
           });
         }
@@ -79,6 +80,7 @@ class Lightbox {
     }, false);
   }
   getfileId(url) {
+    console.log(url);
     const regex = /\/assets\/(.*)-\d+\.webp/;
     const id = url.match(regex);
     return id[1];
