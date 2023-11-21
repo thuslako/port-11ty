@@ -55,14 +55,16 @@ class Lightbox {
         });
         
       }
-      this.navigate();
     }
+    this.navigate();
   }
 
 
   navigate() {
     //case switch for document key events
     document.addEventListener('keydown',(e) => {
+      e.preventDefault();
+      if(!this.lightbox.classList.contains("lightbox-open")) return;
       switch (e.key) {
         case "ArrowRight":
           this.gallery('right');

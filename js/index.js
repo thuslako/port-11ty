@@ -9,22 +9,21 @@ import Lightbox from "./gallery.js";
       btn.target.children[0].classList.remove("show");
     }, 2000);
   };
-  const copyEmail = document.getElementById("copy-email")
+  const copyEmail = document.getElementById("copy-email");
   if (copyEmail) copyEmail.addEventListener("click", copyText, false);
 
   // toggle gallery info button
   const galleryInfobtns = document.getElementsByClassName("info-btn");
-  if(galleryInfobtns.length) galleryInfobtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.target.classList.add("info-btn-open");
-      setTimeout(() => {
-        e.target.classList.remove("info-btn-open");
-      }, 2000);
+  if (galleryInfobtns.length)
+    galleryInfobtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.target.classList.add("info-btn-open");
+        setTimeout(() => {
+          e.target.classList.remove("info-btn-open");
+        }, 2000);
+      });
     });
-  });
-
-
 
   const lightbox = document.getElementById("lightbox");
   const slides = [...document.getElementsByClassName("slide")];
@@ -32,5 +31,4 @@ import Lightbox from "./gallery.js";
     const lightbox = new Lightbox();
     lightbox.init();
   }
-
 })();
