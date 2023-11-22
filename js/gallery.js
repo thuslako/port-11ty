@@ -79,15 +79,14 @@ class Lightbox {
   }
   getfileId(url) {
     const regex = /\/assets\/(.*)-\d+\.webp/;
-    const id = url.match(regex);
-    return id? id[1] : null;
+    const id = [...(url.match(regex))];
+    return id.length? id[1] : null;
   }
 
   gallery(direction) {
     const _images = this.slideImages
     const lightboxImg = document.querySelector("#lightbox img");
-    if (!lightboxImg) return;
-    
+
     const _currentImage = this.getfileId(lightboxImg.src);
     if(this.currentImage &&_images.has(_currentImage)){
       const _image = _images.get(_currentImage);
