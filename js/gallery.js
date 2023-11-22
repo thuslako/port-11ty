@@ -6,6 +6,7 @@ class Lightbox {
     this.lightbox = document.getElementById("lightbox");
     this.slides = [...document.getElementsByClassName("slide")];
     this.slideImages = new Map();
+    this.selectedImage = null;
     this.lightbox.addEventListener("click", (e) => {
       const lightboxImg = document.querySelector("#lightbox img");
       if (e.target === lightboxImg) return;
@@ -48,6 +49,7 @@ class Lightbox {
       });
       image.addEventListener("click", (e) => {
         e.preventDefault();
+        this.selectedImage = imageID;
         const lightboxContent = document.createElement("div");
         lightboxContent.classList.add("lightbox-content");
         const lightboxClose = document.createElement("button");
@@ -70,12 +72,16 @@ class Lightbox {
     //case switch for document key events
     document.addEventListener('keydown', (e) => {
       e.preventDefault();
-      switch (e.key) {
+      console.log(e.code)
+      switch (e.code) {
         case "ArrowRight":
           this.gallery('right');
           break;
         case "ArrowLeft":
           this.gallery('left');
+          break;
+        case "Space":
+          this.closeLightbox();
           break;
         case "Escape":
           this.closeLightbox();
@@ -91,15 +97,16 @@ class Lightbox {
 
   gallery(direction) {
     const lightboxImg = document.querySelector("#lightbox img");
-    const _currentImage = this.getfileId(lightboxImg.src);
-    if (this.slideImages.has(_currentImage)) {
-      const _image = this.slideImages.get(_currentImage);
+    if (this.slideImages.has(this.selectedImage)) {
+      const _image = this.slideImages.get(this.selectedImage);
       switch (direction) {
         case 'right':
           lightboxImg.src = _image.next;
+          this.selectedImage = this.getfileId(_image.next);
           break;
         case 'left':
           lightboxImg.src = _image.prev;
+          this.selectedImage = this.getfileId(_image.prev);
           break;
       }
     }
