@@ -64,7 +64,6 @@ class Lightbox {
     //case switch for document key events
     document.addEventListener('keydown',(e) => {
       e.preventDefault();
-      if(!this.lightbox.classList.contains("lightbox-open")) return;
       switch (e.key) {
         case "ArrowRight":
           this.gallery('right');
@@ -87,8 +86,10 @@ class Lightbox {
   gallery(direction) {
     const _images = this.slideImages
     const lightboxImg = document.querySelector("#lightbox img");
+    if (!lightboxImg) return;
+    
     const _currentImage = this.getfileId(lightboxImg.src);
-    if(_images.has(_currentImage)){
+    if(this.currentImage &&_images.has(_currentImage)){
       const _image = _images.get(_currentImage);
       let nextImage;
       switch (direction) {
