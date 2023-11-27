@@ -15,5 +15,4 @@ import Lightbox from "./gallery.js";
 
   // toggle gallery info button
   new Lightbox();
-
 })();

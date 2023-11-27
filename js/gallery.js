@@ -7,14 +7,6 @@ class Lightbox {
     this.slides = [];
     this.slideImages = new Map();
     this.selectedImage = null;
-    this.lightbox.addEventListener("click", (e) => {
-      const lightboxImg = document.querySelector("#lightbox img");
-      if (e.target === lightboxImg) return;
-      this.lightbox.classList.remove("lightbox-open");
-      this.lightbox.innerHTML = "";
-      document.body.classList.remove("no-scroll");
-    });
-
     this.lightboxContent = document.createElement("div");
     this.lightboxContent.classList.add("lightbox-content");
     this.lightboxClose = document.createElement("button");
@@ -32,6 +24,17 @@ class Lightbox {
     this.navigate();
     this.toggleInfoBtn();
     this.addListeners();
+    this.enableLightBox();
+  }
+
+  enableLightBox() {
+    this.lightbox.addEventListener("click", (e) => {
+      const lightboxImg = document.querySelector("#lightbox img");
+      if (e.target === lightboxImg) return;
+      this.lightbox.classList.remove("lightbox-open");
+      this.lightbox.innerHTML = "";
+      document.body.classList.remove("no-scroll");
+    });
   }
 
   toggleInfoBtn() {
