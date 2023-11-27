@@ -32,7 +32,6 @@ class Lightbox {
       const lightboxImg = document.querySelector("#lightbox img");
       if (e.target === lightboxImg) return;
       this.lightbox.classList.remove("lightbox-open");
-      this.lightbox.innerHTML = "";
       document.body.classList.remove("no-scroll");
     });
   }
