@@ -14,8 +14,6 @@ import Lightbox from "./gallery.js";
   if (copyEmail) copyEmail.addEventListener("click", copyText, false);
 
   // toggle gallery info button
+  new Lightbox();
 
-    const lightbox = new Lightbox();
-    lightbox.toggleInfoBtn();
-    lightbox.init();
 })();
