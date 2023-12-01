@@ -51,12 +51,11 @@ class Lightbox {
   }
 
   isLoaded() {
+    this.slides = [...document.getElementsByClassName("slide")];
+    this.slides = this.slides.slice(1);
     const check = setInterval(() => {
       if (document.readyState === "complete") {
-        this.slides = [...document.getElementsByClassName("slide")];
-        this.slides = this.slides.slice(1);
-        if (this.hadImages()) {
-          // console.log("loaded");
+        if (this.hasImages()) {
           this.init();
           clearInterval(check);
         }
@@ -64,16 +63,12 @@ class Lightbox {
     }, 100);
   }
 
-  hadImages() {
-    return (
-      this.slides.filter((slide) => {
-        return slide.getElementsByTagName("img");
-      }).length == this.slides.length
-    );
+  hasImages() {
+    return this.slides.filter((slide) => slide.getElementsByTagName("img")).length === this.slides.length 
   }
 
   addListeners() {
-    if (!this.hadImages()) return;
+    if (!this.hasImages()) return;
 
     for (let i = 0; i < this.slides.length; i++) {
       const slide = this.slides[i];
