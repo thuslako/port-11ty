@@ -104,6 +104,7 @@ class Lightbox {
       "keydown",
       (e) => {
         e.preventDefault();
+        e.stopPropagation();
         switch (e.code) {
           case "ArrowRight":
             this.gallery("right");
